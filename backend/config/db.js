@@ -1,8 +1,15 @@
 import { Sequelize } from "sequelize";
+import dotenv from "dotenv";
 
-const db = new Sequelize("tugasmku", "root", "", {
-  host: "",
+dotenv.config();
+
+const db = new Sequelize({
   dialect: "mysql",
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 export default db;

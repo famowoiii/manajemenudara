@@ -59,7 +59,7 @@ export const login = async (req, res, next) => {
         id: admin.id,
         isAdmin: admin.isAdmin,
       },
-      "sad&%$%^%$&%&%$&%$$ashdvawgdvawdhgv12312313143782423gdsydauyfgaisfgausyfg&^%zghvjsdhvfshgfvhgv&^T^"
+      process.env.JWT
     );
 
     // Mengirimkan token JWT dalam cookie

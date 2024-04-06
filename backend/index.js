@@ -21,7 +21,7 @@ app.use(cors());
 dotenv.config();
 
 // Router untuk rute admin dan data
-app.use("/api/admin", adminRouter);
+// app.use("/api/admin", adminRouter);
 app.use("/api/data", dataRouter);
 
 // Error middleware
@@ -41,7 +41,7 @@ app.use((err, req, res, next) => {
 // Tangani koneksi socket
 
 // Jalankan server di port 3000
-
-app.listen(3000, () => {
+const Port = process.env.PORT;
+app.listen(Port, () => {
   console.log(`Server running on port 3000`);
 });

@@ -8,17 +8,13 @@ export const verifyToken = (req, res, next) => {
   }
 
   const token = req.cookies.access_token;
-  jwt.verify(
-    token,
-    "sad&%$%^%$&%&%$&%$$ashdvawgdvawdhgv12312313143782423gdsydauyfgaisfgausyfg&^%zghvjsdhvfshgfvhgv&^T^",
-    (err, user) => {
-      if (err) {
-        return res.status(403).json("Token is not valid");
-      }
-      req.user = user;
-      next(); // Panggil next() setelah user ditetapkan
+  jwt.verify(token, process.env.JWT, (err, user) => {
+    if (err) {
+      return res.status(403).json("Token is not valid");
     }
-  );
+    req.user = user;
+    next(); // Panggil next() setelah user ditetapkan
+  });
 };
 
 export const verifyAdmin = (req, res, next) => {

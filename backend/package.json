@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "fikri arkan",
@@ -21,6 +21,7 @@
     "joi": "^17.12.2",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.9.2",
+    "nodemon": "^3.1.0",
     "sequelize": "^6.37.1",
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5"
